@@ -1,0 +1,57 @@
+/* Perbaikan tampilan HP & tablet — dimuat setelah App.css dan MenuPage.css */
+.hero-bg-donut { border-radius: 50%; }
+
+@media (max-width: 960px) {
+  /* HERO */
+  .hero { min-height: 0; padding: 28px 20px 90px; }
+  .splash { display: none; }
+  .hero-bg-donut { width: 300px; left: -90px; top: 20px; }
+  .tagline { margin: 0 0 4px 0; font-size: 20px; transform: rotate(-3deg); }
+  .tagline span { margin-left: 0; }
+  .hero-word { width: 100%; max-width: 460px; margin: 0 0 8px; }
+  .lead { font-size: 18px; margin: 14px 0 22px; }
+  .btn-white { font-size: 18px; padding: 14px 28px; gap: 10px; }
+  .hero-img { height: 270px; margin: 28px 0 0; }
+  .hero-img .box { right: 0; left: auto; width: 100%; max-width: 460px; }
+  .hero-img .drink { width: 34%; max-width: 150px; }
+  .hero-img .d1 { left: 10%; top: 0; }
+  .hero-img .d2 { left: 38%; top: 6%; }
+  .wave { height: 60px; }
+
+  /* TENTANG KAMI: blob sebelumnya melebar 0 sehingga hanya tersisa ruang kosong */
+  .about { padding: 30px 20px 40px; gap: 26px; }
+  .blob-sky { width: 100%; max-width: 280px; height: 230px; margin: 0 auto; }
+  .blob-quote { width: 100%; max-width: 260px; margin: 0 auto; }
+  .about h2 { font-size: 34px; }
+  .about p { max-width: none; }
+  .about .hand { margin-left: 0; }
+
+  /* MENU FAVORIT */
+  .favorit { padding: 36px 20px; gap: 24px; }
+  .favorit h2 { font-size: 30px; }
+  .btn-soft { font-size: 18px; padding: 12px 30px; }
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card { padding: 6px 6px 18px; border-radius: 16px; }
+  .card figcaption { font-size: 12px; padding: 14px 4px 5px; }
+
+  /* LOKASI */
+  .lokasi { padding: 30px 20px 40px; }
+  .lokasi-grid { gap: 28px; }
+  .lokasi-title { font-size: 40px; }
+  .info { padding: 20px; gap: 16px; }
+  .info-row { gap: 14px; }
+  .ico { width: 56px; height: 56px; }
+  .map { min-height: 320px; padding: 8px; }
+  .map iframe { min-height: 300px; }
+  .map-btn { font-size: 12px; padding: 10px 16px; }
+
+  /* FOOTER */
+  .footer .logo-icon { width: 64px; height: 64px; }
+  .footer .logo-word { height: 50px; }
+}
+
+@media (max-width: 520px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }  /* tetap 2 kolom, tidak 1 kolom raksasa */
+  .perks { grid-template-columns: 1fr; gap: 18px; }
+  .hero-img { height: 240px; }
+}

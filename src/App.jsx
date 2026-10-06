@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MenuPage from "./MenuPage.jsx";
+import "./responsive.css";
 import "./App.css";
 
 // Ganti path gambar sesuai file di folder /public/images
