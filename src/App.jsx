@@ -103,7 +103,7 @@ function Home() {
             <img className="hero-bg-donut" src={IMG.icon} alt="" aria-hidden="true" />
             <span className="splash s1" /><span className="splash s2" /><span className="splash s3" />
             <div className="hero-text">
-              <p className="tagline">Donut &amp; Coffe<br /><span>Rasa Yang Selalu Bikin Happy</span></p>
+              <p className="tagline">Donut &amp; Coffee<br /><span>Rasa Yang Selalu Bikin Happy</span></p>
               <img className="hero-word" src={IMG.wordmark} alt="Lingkarasa donut & coffee" />
               <p className="lead">
                 Perpaduan donut yang lembut dan kopi yang nikmat, untuk menemani setiap momen terbaikmu.
@@ -242,7 +242,7 @@ export default function App() {
     <>
       <header className="nav">
         <Logo />
-        <button className="burger" aria-label="Buka menu" onClick={() => setOpen(!open)}>☰</button>
+        <button className="burger" aria-label="Buka menu" aria-expanded={open} onClick={() => setOpen(!open)}>☰</button>
         <nav className={open ? "open" : ""}>
           {links.map(([t, h]) => (
             <a key={h} href={h} onClick={() => setOpen(false)}>{t}</a>
