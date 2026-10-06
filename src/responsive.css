@@ -15,7 +15,7 @@
   .hero-img .box { right: 0; left: auto; width: 100%; max-width: 460px; }
   .hero-img .drink { width: 34%; max-width: 150px; }
   .hero-img .d1 { left: 10%; top: 0; }
-  .hero-img .d2 { left: 38%; top: 6%; }
+  .hero-img .d2 { left: 38%; top: 0; }
   .wave { height: 60px; }
 
   /* TENTANG KAMI: blob sebelumnya melebar 0 sehingga hanya tersisa ruang kosong */

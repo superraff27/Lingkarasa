@@ -137,7 +137,7 @@ h1, h2 { font-family: "Fredoka", sans-serif; }
 .hero-img .box { position: absolute; right: -40px; bottom: 0; width: 112%; max-width: 780px;
   filter: drop-shadow(0 22px 24px rgba(0,0,0,.22)); }
 .hero-img .drink { position: absolute; width: 36%; max-width: 230px; filter: drop-shadow(0 14px 14px rgba(0,0,0,.2)); }
-.hero-img .d1 { left: 14%; top: -2%; z-index: 1; }
+.hero-img .d1 { left: 14%; top: 0; z-index: 1; }
 .hero-img .d2 { left: 40%; top: 0; z-index: 2; }
 
 .quote-icon { width: 64px; height: 64px; border-radius: 50%; position: absolute; top: 14%; left: 38%; }
@@ -145,7 +145,7 @@ h1, h2 { font-family: "Fredoka", sans-serif; }
 .blob-quote .hand { padding-top: 60px; }
 
 
-.lokasi { position: relative; padding-bottom: 90px; }
+.lokasi { position: relative; padding-bottom: 90px; overflow-x: clip; }
 .lokasi::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 52%; background: var(--sky-dark);
   clip-path: ellipse(80% 100% at 50% 100%); z-index: 0; }
 .lokasi > * { position: relative; z-index: 1; }
