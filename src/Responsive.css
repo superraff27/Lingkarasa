@@ -145,8 +145,9 @@
   }
 
   .blob-sky {
-    display: none;
-  }
+  display: block;
+  height: 240px;
+  } 
 
   .about-text {
     width: 100%;

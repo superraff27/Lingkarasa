@@ -300,6 +300,13 @@ h2 {
   border-radius: 60% 0 0 0;
 }
 
+.blob-sky img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .pill {
   display: inline-block;
   background: #2fb5ee;
@@ -698,4 +705,109 @@ section[id] {
   html {
     scroll-behavior: auto;
   }
+}
+
+
+/* Animasi & transisi — dimuat setelah App.css dan responsive.css.
+   Memakai properti `translate`/`scale` agar tidak bentrok dengan `transform` (rotasi tagline, dll). */
+
+/* Transisi halaman */
+.page { animation: pageIn .45s ease both; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Reveal saat scroll */
+.reveal {
+  opacity: 0;
+  translate: 0 32px;
+  scale: 0.97;
+  transition: opacity .7s ease, translate .7s cubic-bezier(.2, .7, .2, 1), scale .7s cubic-bezier(.2, .7, .2, 1);
+}
+.reveal.in { opacity: 1; translate: 0 0; scale: 1; }
+
+/* Hero: muncul berurutan saat halaman dibuka */
+@keyframes riseIn {
+  from { opacity: 0; translate: 0 26px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+@keyframes boxIn {
+  from { opacity: 0; translate: 40px 30px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.hero-text > * { animation: riseIn .8s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-text > :nth-child(1) { animation-delay: .1s; }
+.hero-text > :nth-child(2) { animation-delay: .25s; }
+.hero-text > :nth-child(3) { animation-delay: .4s; }
+.hero-text > :nth-child(4) { animation-delay: .55s; }
+
+.hero-img .box { animation: boxIn .9s cubic-bezier(.2, .7, .2, 1) .3s both; }
+.hero-img .d1 { animation: fadeIn .8s ease .7s both, float 5s ease-in-out 1.5s infinite; }
+.hero-img .d2 { animation: fadeIn .8s ease .9s both, float 5s ease-in-out 2.3s infinite; }
+
+.splash { animation: fadeIn .6s ease 1s both; }
+.hero-bg-donut { animation: spinSlow 60s linear infinite; }
+@keyframes spinSlow { to { rotate: 360deg; } }
+
+/* Tombol */
+.btn-white, .btn-soft, .map-btn {
+  transition: background .25s ease, translate .25s ease, box-shadow .25s ease;
+}
+.btn-white:hover, .btn-soft:hover { translate: 0 -3px; box-shadow: 0 10px 20px rgba(0, 0, 0, .12); }
+.btn-white:active, .btn-soft:active { translate: 0 0; box-shadow: none; }
+.btn-white .arrow { transition: translate .25s ease; }
+.btn-white:hover .arrow { translate: 6px 0; }
+
+/* Navbar */
+.nav { transition: box-shadow .3s ease; }
+.nav.scrolled { box-shadow: 0 4px 18px rgba(0, 0, 0, .14); }
+.nav nav a { position: relative; transition: opacity .2s ease; }
+@media (min-width: 961px) {
+  .nav nav a { text-decoration: none !important; }
+  .nav nav a::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+    background: #fff; border-radius: 2px; scale: 0 1; transition: scale .25s ease;
+  }
+  .nav nav a:hover::after { scale: 1 1; }
+}
+.nav nav a:hover { opacity: 1; }
+
+@media (max-width: 960px) {
+  .nav nav.open { animation: menuDrop .3s ease both; }
+  .nav nav.open a { animation: fadeIn .35s ease both; }
+  .nav nav.open a:nth-child(2) { animation-delay: .05s; }
+  .nav nav.open a:nth-child(3) { animation-delay: .1s; }
+  .nav nav.open a:nth-child(4) { animation-delay: .15s; }
+}
+@keyframes menuDrop {
+  from { opacity: 0; translate: 0 -10px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Kartu menu */
+.card { transition: box-shadow .3s ease; }
+.card-photo { transition: transform .35s cubic-bezier(.2, .7, .2, 1); }
+.card:hover { box-shadow: 0 14px 28px rgba(10, 127, 186, .18); }
+.card:hover .card-photo { transform: translateY(-4px) scale(1.02); }
+
+/* Ikon & info */
+.perk-icon, .ico { transition: transform .3s ease; }
+.perks li:hover .perk-icon { transform: rotate(-8deg) scale(1.1); }
+.info-row:hover .ico { transform: scale(1.1); }
+.logo-icon { transition: transform .5s ease; }
+.logo:hover .logo-icon { transform: rotate(20deg); }
+.foot-social a.soc { transition: transform .25s ease; }
+.foot-social a.soc:hover { transform: translateY(-4px) scale(1.1); }
+
+/* Hormati preferensi "kurangi gerak" */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; translate: 0 0; scale: 1; }
 }
