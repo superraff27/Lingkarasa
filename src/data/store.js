@@ -20,3 +20,13 @@ export const KEUNGGULAN = [
   { ikon: "heart", judul: "Harga Bersahabat", teks: "Nikmatnya kualitas, tanpa bikin kantong jebol." },
   { ikon: "smile", judul: "Tempat Nyaman", teks: "Cocok untuk nongkrong, WFC, atau sekadar rehat." },
 ];
+
+// Kategori halaman menu. "id" dipakai di IMG.menu (field `kategori`).
+// Urutan di sini = urutan tampil di halaman.
+export const MENU_KATEGORI = [
+  { id: "signature", grup: "Minuman", judul: "Signature", sub: "Racikan khas Lingkarasa" },
+  { id: "coffee", grup: "Minuman", judul: "Based Coffee", sub: "Untuk pecinta kopi" },
+  { id: "non-coffee", grup: "Minuman", judul: "Non Coffee", sub: "Segar tanpa kopi" },
+  { id: "donat-mini", grup: "Donat", judul: "Donat Mini Kreasi Lingkarasa", sub: "Kecil, manis, bikin nagih" },
+  { id: "donat-jumbo", grup: "Donat", judul: "Donat Semua Kreasi Jumbo", sub: "Ukuran jumbo, puas di setiap gigitan" },
+];

@@ -1,7 +1,14 @@
 import { IMG } from "../data/images.js";
 import Reveal from "./Reveal.jsx";
 
+// Jumlah kartu yang tampil di beranda. Ubah angka ini kalau mau lebih banyak/sedikit.
+const MAKS_TAMPIL = 4;
+
 export default function FavoriteMenu() {
+  // Ambil menu bertanda `favorit: true`; kalau belum ada yang ditandai, pakai menu pertama.
+  const favorit = IMG.menu.filter((m) => m.favorit);
+  const daftar = (favorit.length ? favorit : IMG.menu).slice(0, MAKS_TAMPIL);
+
   return (
     <section id="menu" className="favorit">
       <Reveal className="fav-text">
@@ -11,7 +18,7 @@ export default function FavoriteMenu() {
         <a href="#/menu" className="btn-soft">Lihat Semua Menu</a>
       </Reveal>
       <div className="cards">
-        {IMG.menu.map((m, i) => (
+        {daftar.map((m, i) => (
           <Reveal as="figure" className="card" key={m.nama} delay={i * 110}>
             <div className="card-photo">
               {m.src && (

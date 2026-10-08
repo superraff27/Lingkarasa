@@ -27,7 +27,7 @@ export default function Location() {
               <div><h3>Jam Operasional</h3><p>{JAM[0]}<br />{JAM[1]}</p></div></div>
             <div className="info-row"><span className="ico">{INFO_ICONS.phone}</span>
               <div><h3>Kontak</h3><p>{KONTAK}</p>
-                <a className="wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer">{INFO_ICONS.wa} Chat Via WhatsApp</a></div></div>
+                <a className="wa" href={`https://wa.me/6285701818959`} target="_blank" rel="noreferrer">{INFO_ICONS.wa} Chat Via WhatsApp</a></div></div>
           </div>
         </Reveal>
 
