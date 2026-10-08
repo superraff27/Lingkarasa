@@ -4,7 +4,7 @@ export const MAPS_EMBED =
   "https://www.google.com/maps?q=-7.1671174,109.1283477&z=17&output=embed";
 
 export const ALAMAT = ["Jl.Raya Telkom Bumijawa", "Bumijawa, Tegal, Jawa Tengah 52466"];
-export const JAM = ["Setiap Hari", "08.00 - 22.00 WIB"];
+export const JAM = ["Setiap Hari", "09.00 - 22.00 WIB"];
 export const KONTAK = "+6285701818959 (WhatsApp)";
 
 export const NAV_LINKS = [
@@ -37,7 +37,7 @@ export const MENU_KATEGORI = [
 export const CABANG = [
   {
     id: "cabang-1",
-    nama: "Cabang 1",
+    nama: "Cabang 1, Bumijawa",
     alamat: ALAMAT,
     jam: JAM,
     mapsUrl: MAPS_URL,
@@ -45,9 +45,9 @@ export const CABANG = [
   },
   {
     id: "cabang-2",
-    nama: "Cabang 2",
+    nama: "Cabang 2, Jejeg",
     alamat: ["Jl. Dukuh Kem, Jejeg, Kecamatan Bumijawa", "Kabupaten Tegal, Jawa Tengah 52466"], // GANTI
-    jam: JAM,
+    jam: ["Setiap Hari", "09.00 - 21.00 WIB"], // GANTI
     mapsUrl: "https://maps.app.goo.gl/HWMVjT582P36UydV9", // GANTI: link share Google Maps cabang 2
     embed: "https://www.google.com/maps?q=-7.166553,109.090717&z=17&output=embed", // GANTI: contoh https://www.google.com/maps?q=-7.0000000,109.0000000&z=17&output=embed
   },
