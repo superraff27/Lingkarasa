@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { ICONS, INFO_ICONS } from "../icons/index.jsx";
-import { KEUNGGULAN, ALAMAT, JAM, KONTAK, WA_NUMBER, MAPS_URL, MAPS_EMBED } from "../data/store.js";
+import { KEUNGGULAN, CABANG, KONTAK, WA_NUMBER } from "../data/store.js";
 import Reveal from "./Reveal.jsx";
 
 export default function Location() {
+  const [aktif, setAktif] = useState(CABANG[0].id);
+  const c = CABANG.find((x) => x.id === aktif) ?? CABANG[0];
+
   return (
     <section id="lokasi" className="lokasi">
       <ul className="perks">
@@ -20,25 +24,48 @@ export default function Location() {
           <h2 className="lokasi-title">Lokasi Kami</h2>
           <p className="hand small">Temukan kami disini!</p>
 
-          <div className="info">
+          {CABANG.length > 1 && (
+            <div className="cabang-tabs" role="tablist" aria-label="Pilih cabang">
+              {CABANG.map((x) => (
+                <button
+                  key={x.id}
+                  role="tab"
+                  aria-selected={aktif === x.id}
+                  className={`menu-tab ${aktif === x.id ? "active" : ""}`}
+                  onClick={() => setAktif(x.id)}
+                >
+                  {x.nama}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="info" key={c.id}>
             <div className="info-row"><span className="ico">{INFO_ICONS.pin}</span>
-              <div><h3>Alamat</h3><p>{ALAMAT[0]}<br />{ALAMAT[1]}</p></div></div>
+              <div><h3>Alamat</h3><p>{c.alamat[0]}<br />{c.alamat[1]}</p></div></div>
             <div className="info-row"><span className="ico">{INFO_ICONS.clock}</span>
-              <div><h3>Jam Operasional</h3><p>{JAM[0]}<br />{JAM[1]}</p></div></div>
+              <div><h3>Jam Operasional</h3><p>{c.jam[0]}<br />{c.jam[1]}</p></div></div>
             <div className="info-row"><span className="ico">{INFO_ICONS.phone}</span>
               <div><h3>Kontak</h3><p>{KONTAK}</p>
-                <a className="wa" href={`https://wa.me/6285701818959`} target="_blank" rel="noreferrer">{INFO_ICONS.wa} Chat Via WhatsApp</a></div></div>
+                <a className="wa" href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noreferrer">{INFO_ICONS.wa} Chat Via WhatsApp</a></div></div>
           </div>
         </Reveal>
 
         <Reveal className="map" delay={150}>
-          <a className="map-btn" href={MAPS_URL} target="_blank" rel="noreferrer">➤ Lihat di Google Maps</a>
-          <iframe
-            title="Peta Lingkarasa"
-            src={MAPS_EMBED}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          {c.mapsUrl && (
+            <a className="map-btn" href={c.mapsUrl} target="_blank" rel="noreferrer">➤ Lihat di Google Maps</a>
+          )}
+          {c.embed ? (
+            <iframe
+              key={c.id}
+              title={`Peta Lingkarasa ${c.nama}`}
+              src={c.embed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          ) : (
+            <p className="map-empty">Peta {c.nama} segera hadir 📍</p>
+          )}
         </Reveal>
       </div>
     </section>

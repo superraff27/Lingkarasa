@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import FavoriteMenu from "./components/FavoriteMenu.jsx";
+import Review from "./components/Review.jsx";
 import Location from "./components/Location.jsx";
 import Footer from "./components/Footer.jsx";
 import "./App.css";
@@ -15,6 +16,7 @@ function Home() {
       <Hero />
       <About />
       <FavoriteMenu />
+      <Review />
       <Location />
     </main>
   );
