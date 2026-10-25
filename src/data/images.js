@@ -7,7 +7,7 @@
 // - zoom: perbesar/kecilkan gambar di kartu (1 = normal). y: geser naik(-)/turun(+), contoh "-4%".
 // - deskripsi & harga: kosongkan "" kalau tidak mau ditampilkan, contoh harga: "Rp 22.000"
 export const IMG = {
-  icon: "/images/logo-icon.jpg",
+  icon: "/images/logo-icon.png",
   wordmark: "/images/wordmark.png",
   box: "/images/hero-donut-box.png",
   caramel: "/images/caramelrm.png",

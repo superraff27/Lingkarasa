@@ -106,7 +106,6 @@ h2 {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #fff;
   object-fit: contain;
 }
 
@@ -1198,4 +1197,41 @@ section[id] {
   width: 1px;
   height: 1px;
   opacity: 0;
+}
+
+/* BACKGROUND MURAL (Tentang Kami) */
+.about {
+  position: relative;
+  isolation: isolate;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/images/bg-mural.jpg") center 42% / cover no-repeat;
+  opacity: 0.3; /* makin kecil = makin samar; naikkan kalau mau lebih jelas */
+  -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  pointer-events: none;
+}
+
+/* BACKGROUND MURAL (Ulasan) */
+.ulasan {
+  position: relative;
+  isolation: isolate;
+}
+
+.ulasan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/images/mural.jpeg") center 68% / cover no-repeat;
+  opacity: 0.26; /* makin kecil = makin samar */
+  transform: scaleX(-1); /* dicerminkan supaya beda dari bagian Tentang Kami */
+  -webkit-mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(transparent, #000 16%, #000 84%, transparent);
+  pointer-events: none;
 }
