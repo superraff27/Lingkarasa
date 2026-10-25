@@ -1,6 +1,6 @@
 export const WA_NUMBER = "6285701818959"; // ganti dengan nomor asli
 export const MAPS_URL = "https://maps.app.goo.gl/5TWjfs87esQbNv1g6";
-export const MAPS_EMBED =
+export const MAPS_EMBED = 
   "https://www.google.com/maps?q=-7.1671174,109.1283477&z=17&output=embed";
 
 export const ALAMAT = ["Jl.Raya Telkom Bumijawa", "Bumijawa, Tegal, Jawa Tengah 52466"];
